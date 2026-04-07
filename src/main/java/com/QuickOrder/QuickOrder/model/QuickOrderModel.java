@@ -6,6 +6,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -35,9 +36,9 @@ public class QuickOrderModel {
     private Estado estado;
 
     @NotBlank (message = "el tipo de pedido es obligatorio")
-    private TIpoPedido tIpoPedido;
+    private TipoPedido tipoPedido;
 
-    @NotBlank (message = "el monto es obligatorio")
+    @NotNull(message = "el monto es obligatorio")
     @Positive (message = "el monto debe ser mayor a cero")
     private Double montoTotal;
 
